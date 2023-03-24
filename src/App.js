@@ -1,25 +1,33 @@
 import logo from "./logo.svg";
 import "./App.css";
 
-const title = "React";
-const welcome = {
-  greeting: "Hey",
-  title: "Love You 3000",
-};
-function getTitle(title) {
-  return title;
-}
+const list = [
+  {
+    title: "React",
+    url: "https://reactjs.org/",
+    author: "Jordan Walke",
+    num_comments: 3,
+    points: 4,
+    objectID: 0,
+  },
+  {
+    title: "Redux",
+    url: "https://redux.js.org/",
+    author: "Dan Abramov, Andrew Clark",
+    num_comments: 2,
+    points: 5,
+    objectID: 1,
+  },
+];
 
 function App() {
   return (
     <div>
-      <h1>Hello World :)</h1>
-      <h1>Hello {title} ;)</h1>
-      <h1>
-        {/* Remember, everything in curly braces in JSX can be used for JavaScript expressions */}
-        {welcome.greeting}!! {welcome.title}
-      </h1>
-      <h1>Hello {getTitle("Buddy 🙂")}</h1>
+      <h1>🔸My Hacker Stories🔥</h1>
+      <hr />
+      {list.map(function (item) {
+        return <div> {item.url} </div>;
+      })}
     </div>
   );
 }
